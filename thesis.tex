@@ -1,0 +1,130 @@
+\documentclass[%
+master,         % тип документа
+subf,           % подключить и настроить пакет subfig для вложенной нумерации рисунков
+href,           % подключить и настроить пакет hyperref
+colorlinks=true % цветные гиперссылки
+%,times         % шрифт Times как основной
+%,fixint=false  % отключить прямые знаки интегралов
+]{disser}
+
+\usepackage[
+a4paper, mag=1000,
+left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm
+]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{algorithm}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{footnote}
+\usepackage{totcount}
+\usepackage{algpseudocode}
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\ifpdf\usepackage{epstopdf}\fi
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Определение}
+
+% Номера страниц снизу и по центру
+\pagestyle{footcenter}
+\chapterpagestyle{footcenter}
+
+% Точка с запятой в качестве разделителя между номерами цитирований
+%\setcitestyle{semicolon}
+
+% Использовать полужирное начертание для векторов
+\let\vec=\mathbf
+
+% Включать подсекции в оглавление
+\setcounter{tocdepth}{2}
+\graphicspath{{fig/}}
+\captionsetup[subfigure]{labelformat=parens, labelsep=space}
+\bibliographystyle{gost705}
+\regtotcounter{page}
+\regtotcounter{figure}
+\regtotcounter{table}
+
+\newtotcounter{figuresnum}
+\def\oldfigure{} \let\oldfigure=\figure
+\def\figure{\stepcounter{figuresnum}\oldfigure}
+
+%\newtotcounter{tablesnum}
+%\def\oldtable{} \let\oldtable=\table
+%\def\table{\stepcounter{tablesnum}\oldtable}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\q}[1]{``#1''}
+
+\newtheorem{theo}{Теорема}
+\newtheorem{lem}[theo]{Лемма}
+\newtheorem{define}[theo]{Определение}
+\newtheorem{prob}[theo]{Проблема}
+\newtheorem{task}[theo]{Задача}
+\newtheorem{example}{Пример}
+
+\begin{document}
+\algnotext{EndFor}
+\algnotext{EndIf}
+\algnotext{EndWhile}
+\newcommand*\thesubfloatfigure{\themainfigure\alph{subfloatfigure}}
+
+\institution{\begin{figure}
+    \includegraphics[scale = 0.250]{aulogo.eps}
+  \end{figure}
+}
+
+% Имя лица, допускающего к защите (зав. кафедрой)
+
+\apname{А.В. Омельченко}
+
+\title{\bf{ДИССЕРТАЦИЯ}\\[-14pt]\textnormal{НА СОИСКАНИЕ УЧЕНОЙ СТЕПЕНИ}\\МАГИСТРА}
+
+\topic{Реконструкция филогенетических деревьев на основе данных о перестройках и событиях вставок и удалений генов \vspace{-1cm}}
+
+% Автор
+\author        {Н.М. Карташов} % ФИО
+\coursenum {03.04.01} % Номер направления
+\course       {Прикладные математика и физика \vspace{-1cm}}
+
+% Научный руководитель
+\sa      {М. А. Алексеев}
+\sastatus{PhD, доцент}
+% Рецензент
+\rev      {А. В. Банкевич}
+\revstatus{м.н.с.}
+
+
+% Город и год
+\city{Санкт-Петербург}
+\date{\number\year}
+\maketitle
+\pagebreak
+
+\input{acknowledgements}
+\input{abstract}
+
+% Содержание
+\tableofcontents
+% Введение
+\input{introduction}
+% Глава 1
+\input{1}
+% Глава 2
+\input{2}
+% Глава 2
+\input{3}
+
+% Заключение
+\input{conclusion}
+
+
+% Список литературы
+
+\bibliography{bibliography}
+
+\end{document}
