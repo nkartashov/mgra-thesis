@@ -10,6 +10,7 @@ BIBLIOGRAPHY = bibliography.bbl
 $(TARGET): $(ALL_TEX) $(BIBLIOGRAPHY)
 	@echo 'Building $(TARGET)'
 	@$(TARGET_BUILDER) $(SOURCE)
+	@$(TARGET_BUILDER) $(SOURCE)
 	@echo 'All done.'
 
 $(AUX_FILE): $(ALL_TEX)
