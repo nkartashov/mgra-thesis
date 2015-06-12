@@ -23,6 +23,7 @@ left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm
 \usepackage{algpseudocode}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage[export]{adjustbox}
 \usepackage{graphicx}
 \ifpdf\usepackage{epstopdf}\fi
@@ -59,6 +60,8 @@ left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm
 
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\q}[1]{``#1''}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % absolute value
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor} % floor
 
 \newtheorem{theo}{Теорема}
 \newtheorem{lem}[theo]{Лемма}

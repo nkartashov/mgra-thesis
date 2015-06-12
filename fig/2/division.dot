@@ -1,0 +1,7 @@
+digraph legend {
+  node [style=filled, colorscheme=set19];
+  "Q" [fillcolor=1];
+  "Q'" [fillcolor=2];
+  {rank = same; "Q"; "Q'";}
+  "Q" -> "Q'" [dir = none]
+}

@@ -1,0 +1,12 @@
+digraph legend {
+  node [style=filled, colorscheme=set19];
+  "A" [fillcolor=1];
+  "BC" [fillcolor=2];
+  "D" [fillcolor=3];
+  "FakeRoot" [shape=diamond,style=filled,label="",height=.1,width=.1] ;
+  "Inner" [shape=point,style=filled,label="",height=.1,width=.1] ;
+  "FakeRoot" -> "D" [dir = none]
+  "FakeRoot" -> "Inner" [dir = none]
+  "Inner" -> "A" [dir = none]
+  "Inner" -> "BC" [dir = none]
+}
